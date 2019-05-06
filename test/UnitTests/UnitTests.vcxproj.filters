@@ -33,9 +33,6 @@
     <ClCompile Include="tests\shifting_unittests.cpp">
       <Filter>tests</Filter>
     </ClCompile>
-    <ClCompile Include="tests\substruction_unittests.cpp">
-      <Filter>tests</Filter>
-    </ClCompile>
     <ClCompile Include="tests\division_unittests.cpp">
       <Filter>tests</Filter>
     </ClCompile>
@@ -47,5 +44,8 @@
     </ClCompile>
     <ClCompile Include="main.cpp" />
     <ClCompile Include="pch.cpp" />
+    <ClCompile Include="tests\subtruction_unittests.cpp">
+      <Filter>tests</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

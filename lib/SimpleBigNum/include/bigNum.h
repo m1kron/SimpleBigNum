@@ -26,10 +26,10 @@ public:
     // Adds inplace other number.
     void Add( const SimpleBigNum& other );
 
-    // Substructs inplace other number.
+    // Subtructs inplace other number.
     // [WARNING]: Since BigNum cannot represent ( yet ) negative numbers, this operation makes only sense
-    // when other number is smaller then this number. In the cases where other number is bigger then this one, this one will be set to zero.
-    void Substruct( const SimpleBigNum& other );
+    // when other number is smaller then this number. In the cases where other number is bigger then this one, this number will be set to zero.
+    void Subtruct( const SimpleBigNum& other );
 
     // Multiplies inplace by other number.
     void Multiply( const SimpleBigNum& other );
@@ -139,7 +139,7 @@ inline SimpleBigNum& SimpleBigNum::operator+=( const SimpleBigNum& other )
 ////////////////////////////////////////////////////////////////////////
 inline SimpleBigNum& SimpleBigNum::operator-=( const SimpleBigNum& other )
 {
-    Substruct( other );
+    Subtruct( other );
     return *this;
 }
 

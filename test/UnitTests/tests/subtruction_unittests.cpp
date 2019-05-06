@@ -2,13 +2,13 @@
 
 using namespace sbn;
 
-class SubstructionUnittests : public BaseTestWithRandomGenerator< uint64_t >
+class SubtructionUnittests : public BaseTestWithRandomGenerator< uint64_t >
 {
 public:
-    SubstructionUnittests() : BaseTestWithRandomGenerator( 0, 0x7FFFFFFFFFFFFFFF ) {}
+    SubtructionUnittests() : BaseTestWithRandomGenerator( 0, 0x7FFFFFFFFFFFFFFF ) {}
 };
 
-TEST_F( SubstructionUnittests, simple_substruction_with_carry )
+TEST_F( SubtructionUnittests, simple_subtruction_with_carry )
 {
     SimpleBigNum::TRawNumberDigits digits = { 0, 0, 1 };
     SimpleBigNum bigNumber( digits.begin(), digits.end() );
@@ -16,7 +16,7 @@ TEST_F( SubstructionUnittests, simple_substruction_with_carry )
     ASSERT_EQ( bigNumber.ToString(), std::to_string( 65535 ) );
 }
 
-TEST_F( SubstructionUnittests, simple_substruction_with_zero )
+TEST_F( SubtructionUnittests, simple_subtruction_with_zero )
 {
     const uint64_t num = GetNextRandomNumber();
     SimpleBigNum bigNumber( num );
@@ -24,7 +24,7 @@ TEST_F( SubstructionUnittests, simple_substruction_with_zero )
     ASSERT_EQ( bigNumber.ToString(), std::to_string( num ) );
 }
 
-TEST_F( SubstructionUnittests, substructions_stochastic_test )
+TEST_F( SubtructionUnittests, subtructions_stochastic_test )
 {
     for( uint32_t i = 0; i < 10000; ++i )
     {
@@ -40,7 +40,7 @@ TEST_F( SubstructionUnittests, substructions_stochastic_test )
     }
 }
 
-TEST_F( SubstructionUnittests, self_substructions_stochastic_test )
+TEST_F( SubtructionUnittests, self_subtructions_stochastic_test )
 {
     for( uint32_t i = 0; i < 10000; ++i )
     {
@@ -52,7 +52,7 @@ TEST_F( SubstructionUnittests, self_substructions_stochastic_test )
     }
 }
 
-TEST_F( SubstructionUnittests, const_decrement )
+TEST_F( SubtructionUnittests, const_decrement )
 {
     const uint64_t iterations = 1000;
     const uint64_t dec = 4372473254326;
@@ -64,7 +64,7 @@ TEST_F( SubstructionUnittests, const_decrement )
     ASSERT_EQ( val.ToString(), std::to_string( iterations / 2 * 4372473254326 ) );
 }
 
-TEST_F( SubstructionUnittests, substracting_bigger_from_smaller_should_give_zero )
+TEST_F( SubtructionUnittests, subtracting_bigger_from_smaller_should_give_zero )
 {
     for( uint32_t i = 0; i < 10000; ++i )
     {

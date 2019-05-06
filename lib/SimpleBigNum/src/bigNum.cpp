@@ -89,7 +89,7 @@ void SimpleBigNum::Add( const SimpleBigNum& other )
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
-void SimpleBigNum::Substruct( const SimpleBigNum& other )
+void SimpleBigNum::Subtruct( const SimpleBigNum& other )
 {
     if( other.IsGreaterThen( *this ) )
     {
@@ -369,8 +369,8 @@ void SimpleBigNum::MultiplyImpl_Karatsuba( const SimpleBigNum& other )
     z1.MultiplyImpl_Karatsuba( otherHighPart );
     z2.MultiplyImpl_Karatsuba( otherLowPart );
     z3.MultiplyImpl_Karatsuba( sum2 );
-    z3.Substruct( z1 );
-    z3.Substruct( z2 );
+    z3.Subtruct( z1 );
+    z3.Subtruct( z2 );
 
     z1.ShitfLeft( exponent + exponent );
     z3.ShitfLeft( exponent );
