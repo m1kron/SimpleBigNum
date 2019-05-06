@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="include">
+      <UniqueIdentifier>{90230d51-406b-40ce-8fc8-136db6a0493e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src">
+      <UniqueIdentifier>{739e0fce-191e-443e-a71b-7713dbcab4c5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\reciprocalEstimator">
+      <UniqueIdentifier>{34a76312-8f9a-4be9-9d50-5bd3f16168ce}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="include\bigNum.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="src\reciprocalEstimator\reciprocalEstimator.h">
+      <Filter>src\reciprocalEstimator</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\bigNum.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\reciprocalEstimator\reciprocalEstimator.cpp">
+      <Filter>src\reciprocalEstimator</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>
