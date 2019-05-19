@@ -20,9 +20,11 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\bigNum.h" />
+    <ClInclude Include="src\arithmeticImpl\arithmeticImpl.h" />
     <ClInclude Include="src\reciprocalEstimator\reciprocalEstimator.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\arithmeticImpl\arithmeticImpl.cpp" />
     <ClCompile Include="src\bigNum.cpp" />
     <ClCompile Include="src\reciprocalEstimator\reciprocalEstimator.cpp" />
   </ItemGroup>

@@ -10,6 +10,9 @@
     <Filter Include="src\reciprocalEstimator">
       <UniqueIdentifier>{34a76312-8f9a-4be9-9d50-5bd3f16168ce}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\arithmeticImpl">
+      <UniqueIdentifier>{f6da62c7-214e-43ec-87d8-41ca8bf8b898}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\bigNum.h">
@@ -18,6 +21,9 @@
     <ClInclude Include="src\reciprocalEstimator\reciprocalEstimator.h">
       <Filter>src\reciprocalEstimator</Filter>
     </ClInclude>
+    <ClInclude Include="src\arithmeticImpl\arithmeticImpl.h">
+      <Filter>src\arithmeticImpl</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\bigNum.cpp">
@@ -25,6 +31,9 @@
     </ClCompile>
     <ClCompile Include="src\reciprocalEstimator\reciprocalEstimator.cpp">
       <Filter>src\reciprocalEstimator</Filter>
+    </ClCompile>
+    <ClCompile Include="src\arithmeticImpl\arithmeticImpl.cpp">
+      <Filter>src\arithmeticImpl</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

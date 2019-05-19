@@ -1,5 +1,6 @@
 #include "../include/bigNum.h"
 #include <algorithm>
+#include "arithmeticImpl/arithmeticImpl.h"
 #include "reciprocalEstimator/reciprocalEstimator.h"
 
 namespace sbn
@@ -8,16 +9,6 @@ namespace helpers
 {
 
 constexpr static uint32_t KARATSUBA_THRESHOLD = 1000;
-
-// Implementation of base 256.
-struct Base256Trait
-{
-    static uint8_t getResultModuloBase( uint16_t value ) { return ( uint8_t )value; }
-    static uint16_t divideByBase( uint16_t value ) { return value >> 8; }
-};
-
-// 
-using TBaseTrait = Base256Trait;
 
 // Helper uninon for converting number binary number to number base 256.
 union BigNumUnion_u64
@@ -65,26 +56,7 @@ void SimpleBigNum::Add( const SimpleBigNum& other )
 {
     const uint32_t otherDigits = other.GetNumberOfDigits();
     m_numberLittleEndian.resize( std::max( otherDigits, GetNumberOfDigits() ) + 1 );
-
-    uint16_t overflow = 0;
-
-    for( uint32_t digitIdx = 0; digitIdx < otherDigits; ++digitIdx )
-    {
-        overflow += ( ( uint16_t )m_numberLittleEndian[ digitIdx ] + ( uint16_t )other.m_numberLittleEndian[ digitIdx ] );
-        m_numberLittleEndian[ digitIdx ] = helpers::TBaseTrait::getResultModuloBase( overflow );
-        overflow = helpers::TBaseTrait::divideByBase( overflow );
-    }
-
-    // Carry overflow:
-    uint32_t digitIdx = otherDigits;
-    while( overflow != 0 )
-    {
-        overflow += m_numberLittleEndian[ digitIdx ];
-        m_numberLittleEndian[ digitIdx ] = helpers::TBaseTrait::getResultModuloBase( overflow );
-        overflow = helpers::TBaseTrait::divideByBase( overflow );
-        ++digitIdx;
-    }
-
+    sbn::internal::AddInplaceImpl( m_numberLittleEndian.data(), other.m_numberLittleEndian.data(), otherDigits );
     RemoveLeadingZeros();
 }
 
@@ -98,28 +70,7 @@ void SimpleBigNum::Subtruct( const SimpleBigNum& other )
     }
 
     const uint32_t otherDigits = other.GetNumberOfDigits();
-
-    uint8_t overflow = 0;
-    for( uint32_t digitIdx = 0; digitIdx < otherDigits; ++digitIdx )
-    {
-        uint8_t thisDigit = m_numberLittleEndian[ digitIdx ];
-        uint8_t otherDigit = other.m_numberLittleEndian[ digitIdx ];
-        uint8_t final = thisDigit - otherDigit - overflow;
-        overflow = ( thisDigit < otherDigit ) || ( ( thisDigit == otherDigit ) && overflow );
-        m_numberLittleEndian[ digitIdx ] = final;
-    }
-
-    // Carry overflow:
-    uint32_t digitIdx = otherDigits;
-    while( overflow != 0 )
-    {
-        uint8_t thisDigit = m_numberLittleEndian[ digitIdx ];
-        uint8_t final = thisDigit - overflow;
-        overflow = thisDigit < overflow;
-        m_numberLittleEndian[ digitIdx ] = final;
-        ++digitIdx;
-    }
-
+    sbn::internal::SustructInplaceImpl( m_numberLittleEndian.data(), other.m_numberLittleEndian.data(), otherDigits );
     RemoveLeadingZeros();
 }
 
@@ -296,31 +247,13 @@ void SimpleBigNum::RemoveLeadingZeros()
 void SimpleBigNum::MultiplyImpl_Basecase( const SimpleBigNum& other )
 {
     // Simple O(n^2) multiplication algorithm:
-    const uint32_t thisOldSize = GetNumberOfDigits();
+    const uint32_t thisSize = GetNumberOfDigits();
     const uint32_t otherSize = other.GetNumberOfDigits();
-    const uint32_t newSize = thisOldSize + otherSize;
+    const uint32_t newSize = thisSize + otherSize;
 
     TRawNumberDigits newNumber( newSize );
-
-    uint16_t overflow = 0;
-
-    for( uint32_t thisDigitIdx = 0; thisDigitIdx < thisOldSize; ++thisDigitIdx )
-    {
-        const uint8_t thisDigit = m_numberLittleEndian[ thisDigitIdx ];
-        for( uint32_t otherDigitIdx = 0; otherDigitIdx < otherSize; ++otherDigitIdx )
-        {
-            uint16_t mult = ( uint16_t )thisDigit * ( uint16_t )other.m_numberLittleEndian[ otherDigitIdx ];
-            overflow += mult + ( uint16_t )newNumber[ thisDigitIdx + otherDigitIdx ];
-            newNumber[ thisDigitIdx + otherDigitIdx ] = helpers::TBaseTrait::getResultModuloBase( overflow );
-            overflow = helpers::TBaseTrait::divideByBase( overflow );
-        }
-
-        newNumber[ thisDigitIdx + otherSize ] += helpers::TBaseTrait::getResultModuloBase( overflow );
-        overflow = helpers::TBaseTrait::divideByBase( overflow );
-    }
-
+    sbn::internal::MultiplyInplaceImpl( m_numberLittleEndian.data(), thisSize, other.m_numberLittleEndian.data(), otherSize, newNumber.data() );
     std::swap( m_numberLittleEndian, newNumber );
-
     RemoveLeadingZeros();
 }
 
