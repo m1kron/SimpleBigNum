@@ -3,7 +3,6 @@
 
 namespace sbn
 {
-
 namespace internal
 {
 
@@ -13,7 +12,6 @@ class ReciprocalEstimator
 public:
     static SimpleBigNum Estimate( const SimpleBigNum& number, uint32_t shift, uint32_t maxSteps );
 };
-
 
 }
 }
