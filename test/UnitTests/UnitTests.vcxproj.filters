@@ -7,6 +7,9 @@
     <Filter Include="tests">
       <UniqueIdentifier>{346a9165-aeba-4b8e-8cf8-c08eb8979c38}</UniqueIdentifier>
     </Filter>
+    <Filter Include="benchmarks">
+      <UniqueIdentifier>{aa3afb0a-030f-4cbc-b761-9209b8a32433}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="baseTest\baseTest.h">
@@ -46,6 +49,9 @@
     <ClCompile Include="pch.cpp" />
     <ClCompile Include="tests\subtruction_unittests.cpp">
       <Filter>tests</Filter>
+    </ClCompile>
+    <ClCompile Include="benchmarks\multiplication_benchmark.cpp">
+      <Filter>benchmarks</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
