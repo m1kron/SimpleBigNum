@@ -8,7 +8,7 @@ namespace sbn
 namespace helpers
 {
 
-constexpr static uint32_t KARATSUBA_THRESHOLD = 1000;
+constexpr static uint32_t KARATSUBA_THRESHOLD = 150;
 
 // Helper uninon for converting number binary number to number base 256.
 union BigNumUnion_u64
