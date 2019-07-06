@@ -268,6 +268,7 @@ void SimpleBigNum::MultiplyImpl_Karatsuba( const SimpleBigNum& other )
     // z2 = thisLowPart * otherLowPart
     // z3 = ( thisHightPart + thisLowPart ) * ( otherHightPart + otherLowPart ) - z1 - z2
     // final = z1*B*B + z3*B + z2
+    // Time complexity: O( n^log2(3) )
 
     const SimpleBigNum& bigger = std::max( *this, other );
     const SimpleBigNum& smaller = std::min( *this, other );
@@ -321,7 +322,7 @@ std::vector<uint8_t> SimpleBigNum::ConvertNumber( const std::vector<uint8_t>& sr
 
     // [NOTE]: To convert srcNumber with srcBase to dstNumber with dstBase, function 
     // uses general alogithm of the form:
-    // dstValue = 0
+    // dstNumber = 0
     // foreach srcDigit in srcNumber:
     //      dstNumber = dstNumber * srcBase
     //      dstNumber = dstNumber + srcDigit
