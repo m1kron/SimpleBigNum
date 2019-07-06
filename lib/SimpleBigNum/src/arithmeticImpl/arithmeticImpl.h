@@ -1,15 +1,10 @@
 #pragma once
-#include <cstdint>
+#include "typedefs.h"
 
 namespace sbn
 {
 namespace internal
 {
-
-typedef uint8_t TDigitType;
-typedef TDigitType* TRawBufferPtr;
-typedef const TDigitType* TConstRawBufferPtr;
-constexpr TDigitType BASE_MINUS_ONE = 255;
 
 // Adds inplace otherNumber to this number. Result is accumulated in thisNumberBuffer.
 // Assumes that thisNumberBuffer is big enough to hold the result.

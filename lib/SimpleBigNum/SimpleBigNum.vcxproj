@@ -21,10 +21,15 @@
   <ItemGroup>
     <ClInclude Include="include\bigNum.h" />
     <ClInclude Include="src\arithmeticImpl\arithmeticImpl.h" />
+    <ClInclude Include="src\arithmeticImpl\generic\arithmeticImplGeneric.h" />
+    <ClInclude Include="src\arithmeticImpl\sse\arithmeticImplSee.h" />
+    <ClInclude Include="src\arithmeticImpl\typedefs.h" />
     <ClInclude Include="src\reciprocalEstimator\reciprocalEstimator.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\arithmeticImpl\arithmeticImpl.cpp" />
+    <ClCompile Include="src\arithmeticImpl\generic\arithmeticImplGeneric.cpp" />
+    <ClCompile Include="src\arithmeticImpl\sse\arithmeticImplSee.cpp" />
     <ClCompile Include="src\bigNum.cpp" />
     <ClCompile Include="src\reciprocalEstimator\reciprocalEstimator.cpp" />
   </ItemGroup>

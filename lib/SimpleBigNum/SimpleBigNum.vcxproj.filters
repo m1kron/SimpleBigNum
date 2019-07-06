@@ -13,6 +13,12 @@
     <Filter Include="src\arithmeticImpl">
       <UniqueIdentifier>{f6da62c7-214e-43ec-87d8-41ca8bf8b898}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\arithmeticImpl\generic">
+      <UniqueIdentifier>{d521b831-5ee4-4cdd-bd4d-296f71c9d7b3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\arithmeticImpl\sse">
+      <UniqueIdentifier>{b00f18a9-826f-4bc3-bcf0-41922ea19ad0}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\bigNum.h">
@@ -24,6 +30,15 @@
     <ClInclude Include="src\arithmeticImpl\arithmeticImpl.h">
       <Filter>src\arithmeticImpl</Filter>
     </ClInclude>
+    <ClInclude Include="src\arithmeticImpl\generic\arithmeticImplGeneric.h">
+      <Filter>src\arithmeticImpl\generic</Filter>
+    </ClInclude>
+    <ClInclude Include="src\arithmeticImpl\typedefs.h">
+      <Filter>src\arithmeticImpl</Filter>
+    </ClInclude>
+    <ClInclude Include="src\arithmeticImpl\sse\arithmeticImplSee.h">
+      <Filter>src\arithmeticImpl\sse</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\bigNum.cpp">
@@ -34,6 +49,12 @@
     </ClCompile>
     <ClCompile Include="src\arithmeticImpl\arithmeticImpl.cpp">
       <Filter>src\arithmeticImpl</Filter>
+    </ClCompile>
+    <ClCompile Include="src\arithmeticImpl\generic\arithmeticImplGeneric.cpp">
+      <Filter>src\arithmeticImpl\generic</Filter>
+    </ClCompile>
+    <ClCompile Include="src\arithmeticImpl\sse\arithmeticImplSee.cpp">
+      <Filter>src\arithmeticImpl\sse</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
