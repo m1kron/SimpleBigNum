@@ -25,6 +25,9 @@
     <ClInclude Include="src\arithmeticImpl\sse\arithmeticImplSee.h" />
     <ClInclude Include="src\arithmeticImpl\typedefs.h" />
     <ClInclude Include="src\reciprocalEstimator\reciprocalEstimator.h" />
+    <ClInclude Include="src\tools\alignmentTools.h" />
+    <ClInclude Include="src\tools\allocator\alignedAllocator\alignedAllocator.h" />
+    <ClInclude Include="src\tools\allocator\iAllocator.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\arithmeticImpl\arithmeticImpl.cpp" />
@@ -32,6 +35,7 @@
     <ClCompile Include="src\arithmeticImpl\sse\arithmeticImplSee.cpp" />
     <ClCompile Include="src\bigNum.cpp" />
     <ClCompile Include="src\reciprocalEstimator\reciprocalEstimator.cpp" />
+    <ClCompile Include="src\tools\allocator\alignedAllocator\alignedAllocator.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>

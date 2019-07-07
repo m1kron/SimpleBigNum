@@ -19,6 +19,15 @@
     <Filter Include="src\arithmeticImpl\sse">
       <UniqueIdentifier>{b00f18a9-826f-4bc3-bcf0-41922ea19ad0}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\tools">
+      <UniqueIdentifier>{999a4fc8-6a47-4845-8fea-9394e42e96fe}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\tools\allocator">
+      <UniqueIdentifier>{c7f10c67-c9fd-45e3-80b8-efb2d844dec0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\tools\allocator\alignedAllocator">
+      <UniqueIdentifier>{62036663-ac08-474f-95a2-e0164b8aca25}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\bigNum.h">
@@ -39,6 +48,15 @@
     <ClInclude Include="src\arithmeticImpl\sse\arithmeticImplSee.h">
       <Filter>src\arithmeticImpl\sse</Filter>
     </ClInclude>
+    <ClInclude Include="src\tools\allocator\iAllocator.h">
+      <Filter>src\tools\allocator</Filter>
+    </ClInclude>
+    <ClInclude Include="src\tools\alignmentTools.h">
+      <Filter>src\tools</Filter>
+    </ClInclude>
+    <ClInclude Include="src\tools\allocator\alignedAllocator\alignedAllocator.h">
+      <Filter>src\tools\allocator\alignedAllocator</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\bigNum.cpp">
@@ -55,6 +73,9 @@
     </ClCompile>
     <ClCompile Include="src\arithmeticImpl\sse\arithmeticImplSee.cpp">
       <Filter>src\arithmeticImpl\sse</Filter>
+    </ClCompile>
+    <ClCompile Include="src\tools\allocator\alignedAllocator\alignedAllocator.cpp">
+      <Filter>src\tools\allocator\alignedAllocator</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

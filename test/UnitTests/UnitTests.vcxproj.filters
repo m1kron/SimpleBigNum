@@ -53,5 +53,8 @@
     <ClCompile Include="benchmarks\multiplication_benchmark.cpp">
       <Filter>benchmarks</Filter>
     </ClCompile>
+    <ClCompile Include="tests\allocator_unittests.cpp">
+      <Filter>tests</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
