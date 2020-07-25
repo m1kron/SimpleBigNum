@@ -1,0 +1,4 @@
+1. Negative numbers.
+2. refactor convert method.
+3. implement allocators.
+4. Optimize using simd.
