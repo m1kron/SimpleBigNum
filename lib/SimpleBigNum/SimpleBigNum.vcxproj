@@ -28,6 +28,7 @@
     <ClInclude Include="src\tools\alignmentTools.h" />
     <ClInclude Include="src\tools\allocator\alignedAllocator\alignedAllocator.h" />
     <ClInclude Include="src\tools\allocator\iAllocator.h" />
+    <ClInclude Include="src\tools\dynamicBuffer\dynamicBuffer.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\arithmeticImpl\arithmeticImpl.cpp" />

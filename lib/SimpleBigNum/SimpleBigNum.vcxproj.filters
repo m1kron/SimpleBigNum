@@ -28,6 +28,9 @@
     <Filter Include="src\tools\allocator\alignedAllocator">
       <UniqueIdentifier>{62036663-ac08-474f-95a2-e0164b8aca25}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\tools\dynamicBuffer">
+      <UniqueIdentifier>{61e0cd4d-7f95-44b4-8426-aea7a4cae203}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\bigNum.h">
@@ -56,6 +59,9 @@
     </ClInclude>
     <ClInclude Include="src\tools\allocator\alignedAllocator\alignedAllocator.h">
       <Filter>src\tools\allocator\alignedAllocator</Filter>
+    </ClInclude>
+    <ClInclude Include="src\tools\dynamicBuffer\dynamicBuffer.h">
+      <Filter>src\tools\dynamicBuffer</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

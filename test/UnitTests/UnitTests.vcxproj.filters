@@ -56,5 +56,8 @@
     <ClCompile Include="tests\allocator_unittests.cpp">
       <Filter>tests</Filter>
     </ClCompile>
+    <ClCompile Include="tests\dynamicBuffer_unittests.cpp">
+      <Filter>tests</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
